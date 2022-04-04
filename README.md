@@ -1,89 +1,54 @@
-# luci-theme-argon ([中文](/README_ZH.md))
+# luci-theme-neobird
+## 针对移动端优化的Openwrt主题
 
-[1]: https://img.shields.io/badge/license-MIT-brightgreen.svg
-[2]: /LICENSE
-[3]: https://img.shields.io/badge/PRs-welcome-brightgreen.svg
-[4]: https://github.com/jerrykuku/luci-theme-argon/pulls
-[5]: https://img.shields.io/badge/Issues-welcome-brightgreen.svg
-[6]: https://github.com/jerrykuku/luci-theme-argon/issues/new
-[7]: https://img.shields.io/badge/release-v1.7.2-blue.svg?
-[8]: https://github.com/jerrykuku/luci-theme-argon/releases
-[9]: https://img.shields.io/github/downloads/jerrykuku/luci-theme-argon/total
-[10]: https://img.shields.io/badge/Contact-telegram-blue
-[11]: https://t.me/jerryk6
-[![license][1]][2]
-[![PRs Welcome][3]][4]
-[![Issue Welcome][5]][6]
-[![Release Version][7]][8]
-[![Release Count][9]][8]
-[![Contact Me][10]][11]
+For Lean's OpenWRT Only
+https://github.com/coolsnowwolf/lede
 
-![](/Screenshots/screenshot_pc.jpg)
-![](/Screenshots/screenshot_phone.jpg)
+六年前用OP，随手把luci-theme-material改成了自己喜欢的Advancedtomato样式
+因为用了很短时间便没再用OP了，主题也没再管。
+后来便有了lede固件默认使用material主题的修改版做主题，包括今天的luci-theme-netgear和luci-theme-argon还是我的思路，不过都不是我喜欢的样子。
+还有一些luci-theme-atmaterial之类的都是当时我的样式表改的，还存在于某些固件中。
 
-A new Luci theme for LEDE/OpenWRT  
-Argon is a clean HTML5 theme for LuCI. It is based on luci-theme-material and Argon Template  
+前几天又用上了OP做旁路，顺手又改了一把，然后随便找了个LOGO(netgear arlo)，起了个名字，编译了一下。
 
-## Notice
+## 主要特点：
+* 针对移动端优化，特别适合手机端做为webapp使用；
+* 修改很多细节，尽量视觉统一（但由于luci插件开发不规范，页面结构有些杂乱，难免有些小问题无法修正）；
+* 极简易用设计，移动端去除繁杂信息，隐藏了提示信息（可能并不适合OP新手，请手机横屏查看提示文本）；
+* 简洁的登录界面，底部导航栏，类App的沉浸式体验；
+* 适配深色模式，适配系统自动切换；
+* 全(tou)新(lai)的APP桌面图标；
+* Retina图片适配。
 
-This branch only matches lean openwrt LuCI 18.06.
+## 体验Webapp方法：
+* 在移动端(iOS/iPadOS)浏览器打开管理界面，添加到主屏幕即可。
+* 想要实现完全的沉浸式（无浏览器导航、无地址栏等）体验，需要使用SSL证书，请自行申请域名、证书、安装并启用。
+* 如果不使用SSL证书，基于安全原因，iOS/iPadOS 在打开新的页面后，将会显示浏览器顶部菜单栏。
 
-## Update log 2021.03.09 [18.06] V1.7.2
+## 目前存在的问题
+* 做为旁路由，安装的插件比较少，接口比较少，部分图片不可见则懒得换，可能未来会主动把图片换掉；
+* 部分插件或页面仅通过样式表很难达到完美，需要修改底层页面结构，这部分内容存在于luci源码中；
 
-- 【v1.7.2】Since access to the bing api requires a stable network on the router, the bing api is modified as an option, and the default is the built-in wallpaper display. After logging in, enter the argon-config [new version] to modify it.
-- 【v1.7.2】Fixed an issue where the built-in switch could not display the interface icon and rate.
-- 【v1.7.1】Fixed an issue where the text at the bottom of the login page would obscure the button at a very small resolution.
-- 【v1.7.1】Solve the problem that the return cannot be obtained for a long time when the network speed is slow.
-- 【v1.7.1】Adjusted some styles.
-- 【v1.7.1】Added an animation effect to the progress bar.
-- 【v1.7.0】Fix some color issue in dark mode.
-- 【v1.7.0】Automatically set as the default theme when compiling.
-- 【v1.7.0】Modify the file structure to adapt to luci-app-argon-config.
-- 【v1.6.9】Fix the problem that the login background cannot be displayed on some phones.
-- 【v1.6.9】Change Syslog background color to white.
-- 【v1.6.9】Remove the dependency of luasocket.
-- 【v1.6.8】Remove depends on wget, add depends Luasocket.
-- 【v1.6.8】Update font icon, add a default icon of undefined menu.
-- 【v1.6.6】Now backgorund allow png jpg gif and mp4 files, random change.
-- 【v1.6.6】Add a volume mute button for video background, default is muted.
-- 【v1.6.6】login page when keyboard show the bottom text overlay the button on mobile.
-- 【v1.6.6】fix select color in dark mode,and add a style for scrollbar.
-- 【v1.6.6】jquery update to v3.5.1.
-- 【v1.6.4】New: login background image can be customized now, upload image to /www/luci-static/argon/background/ (only jpg, png and gif are allowed). Uploaded images will be displayed if they are present. If you have multiple images in /www/luci-static/argon/background/, they will be displayed randomly upon each login.
-- 【v1.6.4】New: force dark mode. Dark mode can now be enabled without client being in "dark mode". To enable: ssh into your router and enter "touch /etc/dark", to disable enter "rm -rf touch /etc/dark" (automatic dark mode).
-- 【v1.6.4】New: Argon Version displayed in footer will match ipk version from now on.
-- 【v1.6.4】Fix: Font colors.
-- 【v1.6.3】Add blur effect for login form.
-- 【v1.6.1】New login theme, Request background imge from bing.com, Auto change everyday.
-- 【v1.6.1】New theme icon.
-- 【v1.6.1】Add more menu category  icon.
-- 【v1.6.1】Fix font-size and padding margin.
-- 【v1.6.1】Restructure css file.
-- 【v1.6.1】Auto adapt to dark mode.
+## 关于其它
+* 你可以改来自己用，也可以继续优化共享，但如果想改进后共享给他人，请再三确认自己的审美能力，以确保不是丑化我的成果
+* 因为用了arlo的logo，请勿用于商业用途
+* 我可能会在某个时间改掉logo
+* luci插件众多，不规范的插件可能会存在显示问题，不做保证
 
-## How to build
-
-Enter in your openwrt/package/lean or other
-
-### Lean lede
+## 预览
+![macOS](https://github.com/thinktip/luci-theme-neobird/blob/main/preview/SCR-20220223-iw6.png)
+![macOS](https://github.com/thinktip/luci-theme-neobird/blob/main/preview/SCR-20220223-iwp.png)
+![macOS](https://github.com/thinktip/luci-theme-neobird/blob/main/preview/SCR-20220223-j1l.png)
+![iOS](https://github.com/thinktip/luci-theme-neobird/blob/main/preview/IMG_6478.PNG)
+![iOS](https://github.com/thinktip/luci-theme-neobird/blob/main/preview/IMG_6481.PNG)
+![iOS](https://github.com/thinktip/luci-theme-neobird/blob/main/preview/IMG_6474.PNG)
+## 自行编译：
 
 ```
 cd lede/package/lean  
-rm -rf luci-theme-argon  
-git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git  
-make menuconfig #choose LUCI->Theme->Luci-theme-argon  
-make -j1 V=s  
+rm -rf luci-theme-neobird  
+git clone https://github.com/thinktip/luci-theme-neobird.git  
+cd ~/lede/
+make menuconfig #choose LUCI->Theme->Luci-theme-neobird  
+make -j1 V=s
 ```
-
-## Install
-
-### For Lean openwrt 18.06 LuCI
-
-```
-wget --no-check-certificate https://github.com/jerrykuku/luci-theme-argon/releases/download/v1.7.0/luci-theme-argon_1.7.0-20200908_all.ipk
-opkg install luci-theme-argon*.ipk
-```
-
-## Thanks to
-
-luci-theme-material: https://github.com/LuttyYang/luci-theme-material/
