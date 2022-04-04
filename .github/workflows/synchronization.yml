@@ -58,5 +58,5 @@ jobs:
         cd repogx
         git add .
         git commit -m "up"
-        git push --quiet "https://${{ secrets.REPO_TOKEN }}@github.com/${{github.repository}}" HEAD:neobird
+        git push --quiet "https://${{ secrets.REPO_TOKEN }}@github.com/${{github.repository}}" HEAD:22.03
         echo "同步完成，请注意查看[diy-part.sh]和[settings.ini]文件的变化和设置好!"
