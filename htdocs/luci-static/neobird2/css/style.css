@@ -892,7 +892,7 @@ p#shadowsocksr_status {
 .main > .main-left > .nav > .slide > .slide-menu > li > a {
     position: relative;
     display: block;
-    color: var(--textColor);
+    color: rgb(102 116 98);
     vertical-align: middle;
     background:none !important;
     border: none !important;
