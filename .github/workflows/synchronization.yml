@@ -51,9 +51,10 @@ jobs:
     - name: 同步上游仓库
       if: env.REPO_TOKEN && (github.event.inputs.again-fork == 'fork')
       run: |
+        cd repogx
+        rm -Rf *
+        git rm --cache *
         cd $GITHUB_WORKSPACE
-        rm -Rf repogx/*
-        git rm --cache repogx/*
         cp -Rf $GITHUB_WORKSPACE/22.03/* repogx/
         rm -rf shangyou/htdocs
         cp -Rf $GITHUB_WORKSPACE/shangyou/* repogx/
