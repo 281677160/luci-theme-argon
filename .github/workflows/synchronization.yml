@@ -1,4 +1,3 @@
-#
 # 同步上游仓库或者清理发布都需要用REPO_TOKEN密匙
 #
 # 记住，同步上游是不会同步您任何自建文件夹的，所以同步后您要自己对比我现有的文件夹里面diy-part.sh和settings.ini文件有没有更新
@@ -45,6 +44,7 @@ jobs:
       run: |
         cd $GITHUB_WORKSPACE
         git clone -b 21.02 https://github.com/${{github.repository}} repogx
+        git clone -b 22.03 https://github.com/${{github.repository}} 22.03
         git clone https://github.com/jerrykuku/luci-theme-argon shangyou
         
     - name: 同步上游仓库
@@ -54,6 +54,8 @@ jobs:
         rm -Rf *
         git rm --cache *
         cd $GITHUB_WORKSPACE
+        cp -Rf $GITHUB_WORKSPACE/22.03/* repogx/
+        rm -rf shangyou/htdocs
         cp -Rf $GITHUB_WORKSPACE/shangyou/* repogx/
         chmod -R 775 repogx
         cd repogx
