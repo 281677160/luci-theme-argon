@@ -55,7 +55,7 @@ jobs:
         git rm --cache *
         cd $GITHUB_WORKSPACE
         cp -Rf $GITHUB_WORKSPACE/22.03/* repogx/
-        rm -rf shangyou/htdocs/luci-static/resources
+        rm -rf shangyou/htdocs
         rm -rf shangyou/luasrc/view/themes/argon/footer.htm
         cp -Rf $GITHUB_WORKSPACE/shangyou/* repogx/
         chmod -R 775 repogx
