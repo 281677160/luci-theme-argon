@@ -44,8 +44,8 @@ jobs:
       if: env.REPO_TOKEN && (github.event.inputs.again-fork == 'fork')
       run: |
         cd $GITHUB_WORKSPACE
-        git clone -b 21.02 https://github.com/281677160/luci-theme-argon shangyou
-        git clone -b 21.02 https://github.com/281677160/luci-theme-argon repogx
+        git clone -b argon-config https://github.com/281677160/luci-theme-argon shangyou
+        git clone -b argon-config https://github.com/281677160/luci-theme-argon repogx
         
     - name: 同步上游仓库
       if: env.REPO_TOKEN && (github.event.inputs.again-fork == 'fork')
