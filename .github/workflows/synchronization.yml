@@ -52,7 +52,7 @@ jobs:
       run: |
         cd $GITHUB_WORKSPACE
         cd shangyou
-        sed -i 's/"Argon 主题设置"/"Argon设置"/g' `egrep "Argon 主题设置" -rl ./`
+        sed -i 's/Argon 主题设置/Argon设置/g' `egrep "Argon 主题设置" -rl ./`
         cd $GITHUB_WORKSPACE
         rm -fr repogx/*
         
