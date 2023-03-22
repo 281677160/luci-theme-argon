@@ -54,8 +54,6 @@ jobs:
       run: |
         cd $GITHUB_WORKSPACE
         cd repogx
-        sed -i 's/argon/argonv3/g' `egrep "argon" -rl ./`
-        sed -i 's/Argon/Argonv3/g' `egrep "Argon" -rl ./`
         for X in $(find . -type d -name "argon"); do cp -Rf "${X}" "argonv3"; done
         cd $GITHUB_WORKSPACE
         chmod -R 775 repogx
