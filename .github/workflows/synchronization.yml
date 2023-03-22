@@ -44,22 +44,20 @@ jobs:
       if: env.REPO_TOKEN && (github.event.inputs.again-fork == 'fork')
       run: |
         cd $GITHUB_WORKSPACE
-        git clone -b argon-config https://github.com/281677160/luci-theme-argon shangyou
-        git clone -b argon-config https://github.com/281677160/luci-theme-argon repogx
+        svn co https://github.com/coolsnowwolf/openwrt-gl-ax1800/trunk/extra/luci/themes/luci-theme-argon repogx
         
     - name: 同步上游仓库
       if: env.REPO_TOKEN && (github.event.inputs.again-fork == 'fork')
       run: |
         cd $GITHUB_WORKSPACE
-        cd shangyou
-        sed -i 's/Argon 主题设置/Argon设置/g' `egrep "Argon 主题设置" -rl ./`
+        cd repogx
+        sed -i 's/argon/argonv3/g' `egrep "argon" -rl ./`
+        sed -i 's/Argon/Argonv3/g' `egrep "Argon" -rl ./`
+        for X in $(find . -type d -name "argon"); do cp -Rf "${X}" "argonv3"; done
         cd $GITHUB_WORKSPACE
-        rm -fr repogx/*
-        
-        cp -Rf $GITHUB_WORKSPACE/shangyou/* repogx
         chmod -R 775 repogx
         cd repogx
         git add .
         git commit -m "up"
-        git push --quiet "https://${{ secrets.REPO_TOKEN }}@github.com/${{github.repository}}" HEAD:21.02
+        git push --quiet "https://${{ secrets.REPO_TOKEN }}@github.com/${{github.repository}}" HEAD:argonv3
         echo "同步完成，请注意查看[diy-part.sh]和[settings.ini]文件的变化和设置好!"
