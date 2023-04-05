@@ -18,7 +18,7 @@
 	luci-theme-material:
 	https://github.com/LuttyYang/luci-theme-material/
 
-	Agron Theme
+	Argon Theme
 	https://demos.creative-tim.com/argon-dashboard/index.html
 
 	Login background
@@ -41,7 +41,9 @@
 </div>
 <footer>
 	<div class="ftc">
-		<a class="luci-link" href="/cgi-bin/luci/admin/status/overview"><%= ver.distversion %></a>
+		<a class="luci-link" href="/cgi-bin/luci/admin/status/overview">Powered by <%= ver.luciname %>
+			(<%= ver.luciversion %>)</a> /
+		<%= ver.distversion %>
 		<% if #categories > 1 then %>
 		<ul class="breadcrumb pull-right" id="modemenu">
 			<% for i, r in ipairs(categories) do %>
@@ -79,7 +81,7 @@
 	})
 </script>
 
-<script src="<%=media%>/js/script.js"></script>
+<script src="<%=media%>/js/script.js?v=1.7.7"></script>
 </body>
 
 </html>
