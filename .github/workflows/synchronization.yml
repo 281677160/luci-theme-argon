@@ -44,8 +44,8 @@ jobs:
       if: env.REPO_TOKEN && (github.event.inputs.again-fork == 'fork')
       run: |
         cd $GITHUB_WORKSPACE
-        git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon shangyou
-        git clone -b 18.06 https://github.com/${{github.repository}} repogx
+        git clone -b master https://github.com/jerrykuku/luci-theme-argon shangyou
+        git clone -b master https://github.com/${{github.repository}} repogx
         
         rm -rf repogx/*
         cp -rf shangyou/* repogx/
@@ -58,5 +58,5 @@ jobs:
         cd repogx
         git add .
         git commit -m "up"
-        git push --quiet "https://${{ secrets.REPO_TOKEN }}@github.com/${{github.repository}}" HEAD:18.06
+        git push --quiet "https://${{ secrets.REPO_TOKEN }}@github.com/${{github.repository}}" HEAD:master
         echo "同步完成，请注意查看[diy-part.sh]和[settings.ini]文件的变化和设置好!"
