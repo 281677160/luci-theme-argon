@@ -45,7 +45,7 @@ jobs:
       run: |
         cd $GITHUB_WORKSPACE
         git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon shangyou
-        git clone -b 18.16 https://github.com/${{github.repository}} repogx
+        git clone -b 18.06 https://github.com/${{github.repository}} repogx
         
         rm -rf repogx/*
         cp -rf shangyou/* repogx/
