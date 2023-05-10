@@ -128,7 +128,7 @@ body {
   margin: 0px;
   padding: 0px;
   height: 100%;
-  font-size: 16px;
+  font-size: rem;
   font-family: "Google Sans", "Microsoft Yahei", "WenQuanYi Micro Hei", "sans-serif", "Helvetica Neue", "Helvetica", "Hiragino Sans GB";
   font-family: var(--font-family-sans-serif);
 }
@@ -600,7 +600,7 @@ footer a {
   padding: 0.5rem 0rem 0.5rem 0;
   text-decoration: none;
   white-space: nowrap;
-  color: #4c4c4c;
+  color: #535659;
   color: var(--menubar-text-color);
   transition: all 0.2s;
   font-size: 0.875rem;
@@ -1945,10 +1945,10 @@ div > .table > .tbody > .tr:nth-of-type(2n) {
 }
 .warning,
 .warning * {
-  background-color: #fb6340;
-  background-color: var(--warning);
-  color: #fff;
-  animation: warning-background-color-breathe 1.5s ease-in-out infinite !important;
+  background-color: #ffd600;
+  background-color: #ffd600;
+  color: #fb6340;
+  /* animation: warning-background-color-breathe 1.5s cubic-bezier(0.55, 0.09, 0.68, 0.53) infinite !important; */
 }
 .notice {
   background-color: #5e72e4 !important;
@@ -1972,7 +1972,7 @@ div > .table > .tbody > .tr:nth-of-type(2n) {
   min-width: inherit;
   overflow: auto;
   border-radius: 0.3rem;
-  background-color: #FFF;
+  background-color: #ffd600;
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 2px 0 rgba(0, 0, 0, 0.12);
 }
 .errorbox {
@@ -2544,7 +2544,7 @@ td > .ifacebadge {
 /*textarea*/
 .cbi-input-textarea {
   width: 100%;
-  border: 0;
+  border: 1;
   outline: none;
   min-height: 14rem;
   padding: 0.8rem;
