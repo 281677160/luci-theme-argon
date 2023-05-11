@@ -441,7 +441,7 @@ div>.table>.tr:nth-of-type(2n),div>table>tbody>tr:nth-of-type(2n){background-col
 .cbi-button-download,.cbi-button-success{border:thin solid #4cae4c;background-color:#5cb85c;color:#fff;font-weight:400;}
 .cbi-page-actions .cbi-button-link:first-child{float:left;}
 .a-to-btn{text-decoration:none;}
-.cbi-value-field .cbi-button-add{display:flex;margin:4px 0 4px 3px;padding:1px 6px;font-weight:700;align-items:center;}
+.cbi-value-field .cbi-button-add{margin:4px 0 4px 3px;font-weight:700;align-items:center;}
 .tabs{overflow-x:auto;margin:0 0 1rem 0;padding:0 1rem;border-radius:.375rem;background-color:#fff;box-shadow:0 4px 8px rgba(0,0,0,.03);white-space:nowrap;}
 .tabs::-webkit-scrollbar{width:1px;height:5px;}
 .tabs::-webkit-scrollbar-thumb{background-color:#f6f9fc;}
@@ -629,7 +629,7 @@ body.modal-overlay-active #modal_overlay{right:0;left:0;opacity:1;}
 .zone-forwards>span{padding:0 .25rem;text-align:center;flex-basis:10%;}
 .zone-forwards .zone-dest,.zone-forwards .zone-src{display:flex;flex-direction:column;}
 .label{padding:.3rem .8rem;border-radius:3px;background-color:#bfbfbf;color:#fff!important;text-decoration:none;text-transform:uppercase;text-shadow:none;white-space:nowrap;font-weight:700;font-size:.8rem;}
-label>input[type=checkbox],label>input[type=radio]{position:relative;top:.4rem;right:.2rem;margin:0;vertical-align:bottom;}
+label>input[type=checkbox],label>input[type=radio]{position:relative;top:.1rem;right:.09rem;margin:0;vertical-align:initial;}
 label[data-index][data-depends]{padding-right:2em;}
 .showSide{display:none;}
 .darkMask{position:fixed;top:0;z-index:99;display:none;width:100%;height:100%;background-color:rgba(0,0,0,.56);content:"";transition:all .2s;}
@@ -661,7 +661,7 @@ input[name=nslookup],input[name=ping],input[name=traceroute]{width:80%;}
 [data-page=admin-system-flash] .cbi-map-tabbed{border-radius:.375rem;}
 [data-page=admin-system-flash] legend{display:block!important;display:block;margin-bottom:0;margin-bottom:0;padding:1rem 0 1rem 1.5rem;width:100%;border-bottom:1px solid rgba(0,0,0,.05);color:#32325d;letter-spacing:.1rem;font-weight:700;font-size:1.2rem;line-height:1.5;}
 [data-page=admin-system-flash] .cbi-section-descr{padding:1rem 0 1rem 1.5rem;color:#525f7f;font-weight:600;}
-[data-page=admin-system-flash] .modal label>input[type=checkbox]{top:-.35rem;}
+[data-page=admin-system-flash] .modal label>input[type=checkbox]{top:.5rem;}
 [data-page=admin-system-flash] .modal .btn{white-space:normal!important;}
 #cbi-wireless>#wifi_assoclist_table>.tr{box-shadow:inset 1px -1px 0 #ddd,inset -1px -1px 0 #ddd;}
 #cbi-wireless>#wifi_assoclist_table>.tr.placeholder>.td{right:33px;bottom:33px;left:33px;border-top:thin solid #ddd!important;}
