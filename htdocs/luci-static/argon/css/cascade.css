@@ -958,16 +958,16 @@ select {
 }
 
 .btn,button,select,input,.cbi-dropdown {
-    line-height: rem;
-    color: #8898aa;
-    border: 1px solid #ddd;
-    border-radius: .25rem;
-    outline: 0;
-    background-image: none;
-    box-shadow: none;
-    transition: box-shadow .15s ease;
-    margin: .25rem .1rem;
-    padding: .5rem .75rem
+	line-height: rem;
+	color: #8898aa;
+	border: 1px solid #ddd;
+	border-radius: .25rem;
+	outline: 0;
+	background-image: none;
+	box-shadow: none;
+	transition: box-shadow .15s ease;
+	margin: .25rem .1rem;
+	padding: .5rem .75rem
 }
 
 select,.cbi-dropdown {
