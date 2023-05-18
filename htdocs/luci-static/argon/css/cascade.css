@@ -958,16 +958,16 @@ select {
 }
 
 .btn,button,select,input,.cbi-dropdown {
-	line-height: rem;
-	padding: .5rem .75rem;
-	margin: .25rem .1rem;
-	color: #8898aa;
-	border: 1px solid #a1b9d0;
-	border-radius: .25rem;
-	outline: 0;
-	background-image: none;
-	box-shadow: none;
-	transition: box-shadow .15s ease;
+    line-height: rem;
+    color: #8898aa;
+    border: 1px solid #ddd;
+    border-radius: .25rem;
+    outline: 0;
+    background-image: none;
+    box-shadow: none;
+    transition: box-shadow .15s ease;
+    margin: .25rem .1rem;
+    padding: .5rem .75rem
 }
 
 select,.cbi-dropdown {
@@ -3227,7 +3227,7 @@ label[data-index][data-depends] {
 }[data-page="admin-system-flash"] .cbi-page-actions {
 	padding: 0rem 1rem 1rem 0rem
 }[data-page="admin-system-flash"] .modal label>input[type="checkbox"] {
-	/* top:-0.35rem; */
+	top: -0.1rem;
 }[data-page="admin-system-flash"] .modal .btn {
 	white-space: normal!important
 }
