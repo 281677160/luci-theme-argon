@@ -28,7 +28,7 @@ jobs:
     
     steps:
     - name: 准备结束
-      uses: actions/checkout@v2
+      uses: actions/checkout@v4
       
     - name: 部署环境
       env:
@@ -46,6 +46,25 @@ jobs:
         cd $GITHUB_WORKSPACE
         git clone -b master https://github.com/jerrykuku/luci-theme-argon shangyou
         git clone -b master https://github.com/${{github.repository}} repogx
+        cd shangyou
+        luci_file="$(grep -Eio "<%= ver.luciname %>"  -rl ./ |grep "\.htm")"
+        for x in ${luci_file}
+        do
+          b="$(grep -Eio 'Powered.*<%= ver.luciname %>' "$x")"
+          [[ -n "${b}" ]] && sed -i "s?${b}??g" "$x"
+  
+          c="$(grep -Eio '\(<%= ver.luciversion %>\)</a> /' "$x")"
+          if [[ -n "${c}" ]]; then
+            sed -i "s?${c}??g" "$x"
+            sed -i 's?<%= ver.distversion %>?<%= ver.distversion %> </a>?g' "$x"
+          else
+            [[ -z "$(grep "<%= ver.distversion %>" "$x")" ]] && sed -i 's?<%= ver.luciversion %>?<%= ver.distversion %>?g' "$x"
+          fi
+  
+          d="$(grep -Eio '<a href="https://github.com/.*%></a> /' "$x")"
+          [[ -n "${d}" ]] && sed -i "s?${d}??g" "$x"
+        done
+        cd ..
         
         rm -rf repogx/*
         cp -rf shangyou/* repogx/
