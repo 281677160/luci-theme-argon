@@ -47,26 +47,11 @@ jobs:
         git clone -b master https://github.com/jerrykuku/luci-theme-argon shangyou
         git clone -b master https://github.com/${{github.repository}} repogx
         cd shangyou
-        luci_file="$(grep -Eio "<%= ver.luciname %>"  -rl ./ |grep "\.htm")"
-        for x in ${luci_file}
-        do
-          b="$(grep -Eio 'Powered.*<%= ver.luciname %>' "$x")"
-          [[ -n "${b}" ]] && sed -i "s?${b}??g" "$x"
-  
-          c="$(grep -Eio '\(<%= ver.luciversion %>\)</a> /' "$x")"
-          if [[ -n "${c}" ]]; then
-            sed -i "s?${c}??g" "$x"
-            sed -i 's?<%= ver.distversion %>?<%= ver.distversion %> </a>?g' "$x"
-          else
-            [[ -z "$(grep "<%= ver.distversion %>" "$x")" ]] && sed -i 's?<%= ver.luciversion %>?<%= ver.distversion %>?g' "$x"
-          fi
-  
-          d="$(grep -Eio '<a class="luci-link" href="https://github.com/.*%></a> \|' "$x")"
-          [[ -n "${d}" ]] && sed -i "s?${d}??g" "$x"
+        FILE_PATH="luasrc/view/themes/argon/footer.htm"
+        sed -i '/<a class="luci-link" href="https:\/\/github.com\/openwrt\/luci"/d; /<span class="footer-separator">|<\/span>/d; /<a href="https:\/\/github.com\/jerrykuku\/luci-theme-argon"/d' "$FILE_PATH"
 
-          d="$(grep -Eio '<a href="https://github.com/.*%></a> \|' "$x")"
-          [[ -n "${d}" ]] && sed -i "s?${d}??g" "$x"
-        done
+        FOOTER_PATH="luasrc/view/themes/argon/footer_login.htm"
+        sed -i '/<a class="luci-link" href="https:\/\/github.com\/openwrt\/luci"/d; /<a href="https:\/\/github.com\/jerrykuku\/luci-theme-argon"/d' "$FOOTER_PATH"
         cd ..
         
         rm -rf repogx/*
