@@ -61,7 +61,10 @@ jobs:
             [[ -z "$(grep "<%= ver.distversion %>" "$x")" ]] && sed -i 's?<%= ver.luciversion %>?<%= ver.distversion %>?g' "$x"
           fi
   
-          d="$(grep -Eio '<a href="https://github.com/.*%></a> /' "$x")"
+          d="$(grep -Eio '<a class="luci-link" href="https://github.com/.*%></a> \|' "$x")"
+          [[ -n "${d}" ]] && sed -i "s?${d}??g" "$x"
+
+          d="$(grep -Eio '<a href="https://github.com/.*%></a> \|' "$x")"
           [[ -n "${d}" ]] && sed -i "s?${d}??g" "$x"
         done
         cd ..
